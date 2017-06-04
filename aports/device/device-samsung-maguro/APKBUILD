@@ -12,6 +12,7 @@ subpackages=""
 source="
   deviceinfo
   bcmdhd.cal
+  initfs-hook.sh
 "
 options="!check"
 
@@ -20,10 +21,12 @@ build() {
 }
 
 package() {
-	install -D -m644 "$srcdir"/deviceinfo \
-		"$pkgdir"/etc/deviceinfo
-  install -D -m644 "$srcdir"/bcmdhd.cal \
-    "$pkgdir"/etc/wifi/bcmdhd.cal
+    install -D -m644 "$srcdir"/deviceinfo \
+        "$pkgdir"/etc/deviceinfo
+    install -D -m644 "$srcdir"/bcmdhd.cal \
+        "$pkgdir"/etc/wifi/bcmdhd.cal
+    install -D -m644 "$srcdir"/initfs-hook.sh \
+        "$pkgdir"/etc/postmarketos-mkinitfs/hooks/00-${pkgname}.sh
 }
 
 sha512sums="48d66379b833fdef65de3cefa82eeb25c10cce156caf579d936cf089a0ce9cf1b447f40ccd89dfeb6c8919a47209f110829fa4cd4acdd1c0e02cdb188aeeb07a  deviceinfo
