@@ -19,7 +19,7 @@ package() {
 	install -D -m644 "$srcdir"/50-firmware.rules \
 		"$pkgdir"/etc/udev/rules.d/50-firmware.rules
 	install -D -m755 "$srcdir"/firmware.sh \
-		"$pkgdir"/usr/bin/firmware.sh
+		"$pkgdir"/usr/lib/firmwareload.sh
 
 }
 sha512sums="c6de3b44bc45b9f9c641a7e34c69a481ee39b99ac0251cd28f2b3aae49c1a8d1ca448f4936b7942b1a8b8f7c18a5415c938098765ed8cf08456543800160e64b  sudoers
